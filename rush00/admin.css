@@ -1,0 +1,15 @@
+body { background-image: url("http://guilcor.fr/wp-content/uploads/2015/05/bg.jpg")}
+
+table{
+	border-collapse: collapse;
+    border: 1px solid black;
+    width: 10%;
+    height: 25px;
+    margin: auto;
+}
+
+.op{
+
+	text-align: center;
+}	
+

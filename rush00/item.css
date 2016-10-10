@@ -1,0 +1,20 @@
+body { background-image: url("http://guilcor.fr/wp-content/uploads/2015/05/bg.jpg")}
+
+
+table, th, td {
+    border: 1px;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+img{
+    /*height:20vmin
+    width:auto;/*maintain aspect ratio*/
+    /*max-width:20vmin;*/
+    max-width:100%;
+   max-height:100%;
+}
+
