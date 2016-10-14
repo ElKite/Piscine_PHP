@@ -1,0 +1,89 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+</head>
+<script type="text/javascript">
+    function init() 
+  {
+      var button = document.getElementById('try');
+      var first = document.getElementById('first');
+      var second = document.getElementById('second');
+      var select = document.getElementById('select');
+       
+      var operator;
+      var nbr1;
+      var nbr2;
+    
+    setInterval(Alert, 30000);
+  
+    
+    button.onclick = function (){
+      operator = select.options[select.selectedIndex].text;
+      CheckValue();
+      if (!isNaN(nbr1) && !isNaN(nbr2))
+        {
+          if (operator == '+')
+            alert(nbr1 + nbr2);
+          else if (operator == '-')
+            alert(nbr1 - nbr2);
+          else if (operator == '/')
+            {
+              if (nbr2 == 0)
+                {
+                  console.log("It's over 9000!");
+                  alert("It's over 9000!");
+                }
+              else
+                alert(nbr1 / nbr2);
+            }
+          else if(operator == '*')
+            alert(nbr1 * nbr2);
+          else if (operator == '%')
+          {
+            if (nbr2 == 0)
+                {
+                  console.log("It's over 9000!");
+                  alert("It's over 9000!");
+                }
+            else
+              alert(nbr1 % nbr2);
+          }
+        }
+    };
+    
+    function CheckValue() {
+      if (first.value == "" || second.value == "")
+        alert("Error :(");
+      else if (!isNaN(parseInt(first.value)) || !isNaN(parseInt(second.value)))
+       {
+          if (parseInt(first.value) < 0 || parseInt(second.value) < 0)
+            alert("Error :(");
+          else {
+            nbr1 = parseInt(first.value);
+            nbr2 = parseInt(second.value);
+          }
+       }
+       else
+         alert("Error :(");
+    };
+    
+    function Alert() {
+      alert("Please...try me...");
+    };
+  }
+  </script>
+<body onload="init();">
+    <input type="text" id="first"/>
+    </br>
+  <select id="select"> <option value="+" selected>+</option>
+    <option value="-">-</option>
+    <option value="/">/</option>
+    <option value="*">*</option>
+    <option value="%">%</option></select>
+    </br>
+    <input type="text" id="second"/>
+    </br>
+<button id="try" input="submit" value="Try me!">Try me!</button>
+</body>
+</html>

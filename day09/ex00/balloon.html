@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    *  {
+       transition: all 0.4s ease;
+    }
+    </style>
+</head>
+<script type="text/javascript">
+    function init() {
+    
+    var balloon = document.getElementById('balloon');
+    var colors = ['red', 'green', 'blue'];
+    var color = 0;
+    var size = 200;
+    
+    balloon.onclick = function (){
+      if (color == 2)
+	color = 0;
+	else
+    color++;
+        
+       this.style.backgroundColor = colors[color];
+       if (size <= 410)
+				   size += 10;
+       else
+				   size = 200;
+        UpdateSize();
+    };
+    
+    balloon.onmouseout = function() {
+				   if (color == 0)
+				       color = 2;
+      else
+				   color--;
+       this.style.backgroundColor = colors[color];
+       size -=5;
+       if (size < 200)
+				  size = 200;
+        UpdateSize();
+    };
+    
+    function UpdateSize() {
+				  balloon.style.width = size + "px";
+				  balloon.style.height = size + "px";
+    
+    };
+    }
+  </script>
+<body onload="init();">
+  <div id="balloon" style="width:200px; height:200px; background-color: red; border-radius: 50%">
+  </div>
+</body>
+</html>

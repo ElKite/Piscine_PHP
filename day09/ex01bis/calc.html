@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    *  {
+       transition: all 0.4s ease;
+    }
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+  <input type="text" id="first"/>
+    </br>
+  <select id="select"> <option value="+" selected>+</option>
+    <option value="-">-</option>
+    <option value="/">/</option>
+    <option value="*">*</option>
+    <option value="%">%</option></select>
+    </br>
+    <input type="text" id="second"/>
+    </br>
+<button id="try" input="submit" value="Try me!">Try me!</button>
+  <script>  
+    
+    setInterval(Alert, 30000);
+  
+    
+    $("#try").click( function (){
+      var ope = $("#select").val();
+      var nbr2 = $("#first").val();
+      var nbr1 = $("#second").val();
+      if ($.isNumeric(nbr1) && $.isNumeric(nbr2))
+        {
+          if (nbr1 === "0" && (ope === "/" || ope === "%") ) {
+          alert("It's over 9000 !");
+          console.log("It's over 9000 !");
+          return ;
+        }
+        if ($.isNumeric(nbr2) && $.isNumeric(nbr1)) {
+          var result = eval(parseInt(nbr2) + ope + parseInt(nbr1));
+          alert(result);
+          console.log(result);
+        }
+        else
+          alert("Error :(");
+      }
+    });
+    
+    function Alert() {
+      alert("Please...try me...");
+    };
+  </script>
+</body>
+</html>
